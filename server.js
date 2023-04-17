@@ -10,9 +10,8 @@ const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-// app.use('/api', api);
 
-
+//connection to the database
 const db = mysql.createConnection(
     {
       host: 'localhost',
@@ -31,7 +30,7 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
 
-
+//Prompt questions
   const promptUser = () => {
     return inquirer.prompt([
         {
